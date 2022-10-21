@@ -22,7 +22,7 @@ public class Main  {
                     Thread thread = new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            //System.out.println("ip:" + ip + "port:" + port);
+                            //System.out.println("ip:" + ip + "port:" + port); //Для проверки
                             checkProxy(ip, port);
                         }
                     });thread.start();
@@ -38,22 +38,25 @@ public class Main  {
         }
     }
 
+
+
     public static void checkProxy(String ip, int port){
 
-       try {
-            Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(ip,port));
-            URL url = new URL("https://vozhzhaev.ru/test.php");
-            // URL url = new URL("https://google.com");
-            //URL url = new URL("https://www.youtube.com/");
+        try {
+            Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(ip, port));
+                URL url = new URL("https://vozhzhaev.ru/test.php");
+             // URL url = new URL("https://google.com");
+             // URL url = new URL("https://www.youtube.com/");
             URLConnection connection = url.openConnection(proxy);
-            BufferedReader in =  new BufferedReader(new InputStreamReader(connection.getInputStream()));
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             String inputline = "";
 
-            while ((inputline = in.readLine()) !=null){//while
+            while ((inputline = in.readLine()) != null) {
                 System.out.println(inputline + " - работает =======================");
             }
 
-            FileWriter fw = new FileWriter("C://Users/MTSUser/Desktop/goods_ip.txt",true);
+            FileWriter fw = new FileWriter("C://Users/MTSUser/Desktop/goods_ip.txt", true);
             fw.write(ip + ":" + port + "\n");
             fw.flush();
             fw.close();
