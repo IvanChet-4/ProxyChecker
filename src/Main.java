@@ -56,7 +56,7 @@ public class Main {
             }
 
             FileWriter fw = new FileWriter(PATH_TO_FILE_for_save_goods_ip, true); //  Путь к файлу ".../Desktop/goods_ip.txt", в котором сохраняются ip-адреса и номера портов по которым устанавливается успешное соединение.
-            fw.write("\n " + ip + " : " + port + " \n");
+            fw.write("\n " + ip + " : " + port + " \n \r");
             fw.flush();
             fw.close();
         } catch (Exception e) {
