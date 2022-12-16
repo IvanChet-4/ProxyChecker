@@ -40,10 +40,7 @@
 Пример содержимого Constants.java:
 
 package constants;
-
 public interface Constants {
-
     String PATH_TO_FILE_somes_ip = "C://Users/User/Desktop/ip.txt";
     String PATH_TO_FILE_for_save_goods_ip= "C://Users/User/Desktop/goods_ip.txt";
-
 }
