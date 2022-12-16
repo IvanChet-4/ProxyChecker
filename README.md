@@ -35,3 +35,12 @@
 133.18.227.47:8080
 
 ![12](https://user-images.githubusercontent.com/104260618/203404985-5b48c4e9-7514-4351-a573-7d8699c15231.jpg)
+
+Переменные со значением пути к файлам и именами файлов .txt указаны в src/constants/Constants.java
+Пример содержимого Constants.java:
+package constants;
+
+public interface Constants {
+    String PATH_TO_FILE_somes_ip = "C://Users/User/Desktop/ip.txt";
+    String PATH_TO_FILE_for_save_goods_ip= "C://Users/User/Desktop/goods_ip.txt";
+}
